@@ -1,25 +1,31 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { useFetch } from "../hooks/useFetch"
+import {getDoc, doc} from 'firebase/firestore';
+import {db} from '../firebase/config'
 
-export default function Article({articles}) {
+export default function Article() {
   const { urlId } = useParams()
-  //const history = useHistory()
-
   const navigate = useNavigate()
 
-  const article = articles.find( ({ id }) => id === urlId);
-
   console.log("id: " + urlId)
-  console.log(articles)
 
-  if (!article) {
-    setTimeout(() => {
-      // history.goBack()
-      //history.push('/')
-      navigate('/');
-    }, 2000)
-  }
+  const [article, setArticle] = useState(null);
+
+  useEffect(() => {
+    const ref = doc(db, 'articles', urlId);
+    getDoc(ref)
+    .then((snapshot)=>{
+      setArticle(snapshot.data());
+    })
+  })
+
+  // if (!article) {
+  //   setTimeout(() => {
+  //     // history.goBack()
+  //     //history.push('/')
+  //     navigate('/');
+  //   }, 2000)
+  // }
 
   return (
     <div>
@@ -28,7 +34,7 @@ export default function Article({articles}) {
         <div key={article.id}>
           <h2>{article.title}</h2>
           <p>By {article.author}</p>
-          <p>{article.body}</p>
+          <p>{article.description}</p>
         </div>
       )}
     </div>
