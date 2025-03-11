@@ -1,7 +1,109 @@
-.home .card {
+/* Light Mode */
+body {
+  background: #f9f9f9;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.home {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
   padding: 20px;
-  border: 1px solid #e4e4e4;
-  border-radius: 4px;
-  box-shadow: 4px 4px 6px rgba(0,0,0,0.05);
+}
+
+h2 {
+  font-size: 28px;
   margin-bottom: 20px;
+  color: #333;
+}
+
+/* Search Bar */
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  background: #fff;
+  color: #333;
+}
+
+/* Card */
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-content {
+  flex: 1;
+  text-align: left;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 22px;
+  color: #222;
+}
+
+.card .author {
+  font-size: 14px;
+  color: #666;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 8px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Icons */
+.icons {
+  display: flex;
+  gap: 12px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.delete-icon:hover {
+  opacity: 0.7;
+}
+
+.edit-icon:hover {
+  opacity: 0.7;
+}
+
+/* Loading and No Results */
+.loading, .no-results {
+  font-size: 18px;
+  color: #666;
 }

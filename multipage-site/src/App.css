@@ -2,78 +2,74 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  font-family: Arial, sans-serif;
 }
 
 nav {
-  background: white;
+  background: #fff;
   padding: 20px 0;
   margin-bottom: 40px;
   border-bottom: 1px solid #eee;
-}
-
-.nav-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 nav h1 {
   color: #333;
   margin: 0;
   font-size: 2rem;
+  text-align: center;
 }
 
 .nav-links {
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
 }
 
-nav a {
+.nav-link {
   color: #0a0a0a;
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 4px;
+  font-size: 1.1rem;
   transition: all 0.2s ease;
 }
 
-nav a:hover {
+.nav-link:hover {
   background: #9f91ec;
-  color: black;
+  color: #fff;
 }
 
-nav a.active {
+.nav-link.active {
   color: white;
   background: #4b09c7;
 }
 
 .content {
-  padding: 10px 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .nav-content {
-    flex-direction: column;
-    gap: 20px;
-  }
-  
   .nav-links {
-    width: 100%;
-    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
   }
-  
+
   nav {
     padding: 15px 0;
   }
-  
+
   .App {
     padding: 0 15px;
   }
 }
 
-/* Add smooth transitions */
 .App * {
   transition: all 0.2s ease;
 }
+
+/* Add smooth transitions */
