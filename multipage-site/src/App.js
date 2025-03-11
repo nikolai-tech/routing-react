@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Article from './pages/Article';
 import FormArticle from './pages/FormArticle';
+import EditArticle from './pages/EditArticle';
 import Login from './pages/login/Login';
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/articles/:urlId" element={<Article />} />
-            <Route path="/edit/:urlId" element={<FormArticle />} />
+            <Route path="/edit/:urlId" element={<EditArticle />} />
             <Route path="/new" element={<FormArticle />} />
             <Route path="/login" element={<Login />} />
             <Route path="/*" element={<Navigate to="/" />} />
